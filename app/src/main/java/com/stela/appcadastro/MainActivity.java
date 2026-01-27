@@ -1,5 +1,6 @@
 package com.stela.appcadastro;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -21,4 +22,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+    // Create the text message with a string
+
+    Intent sendIntent = new Intent();
+sendIntent.setAction(Intent.ACTION_SEND);
+sendIntent.setType("text/plain");
+sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
+    // Start the activity
+    startActivity(sendIntent);
 }
